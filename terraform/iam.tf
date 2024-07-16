@@ -31,7 +31,7 @@ data "aws_iam_policy_document" "ec2_instance_role_policy" {
   }
 }
 
-## Create service-linked role used by the ECS Service to manage the ECS Cluster resource
+## Creates service-linked role used by the ECS Service to manage the ECS Cluster resource
 resource "aws_iam_role" "ecs_service_role" {
   name               = "${var.name}_ECS_ServiceRole"
   assume_role_policy = data.aws_iam_policy_document.ecs_service_policy.json
